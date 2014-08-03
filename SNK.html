@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SNK</title>
+    <style>
+        body {
+            font: 10pt arial;
+        }
+
+        #mynetwork {
+            background: #FFFFFF;
+        }
+    </style>
+
+    <script type="text/javascript" src="http://visjs.org/dist/vis.js"></script>
+    <style type="text/css"></style>
+
+    <script type="text/javascript">
+        var nodes = null;
+        var edges = null;
+        var network = null;
+
+        function draw() {
+            nodes = [
+                {id: 'Alfred', label: 'Alfred', image: 'http://www.fightersgeneration.com/characters/cf2_alfred.gif', shape:'image'},
+                {id: 'Andy Bogard', label: 'Andy Bogard', image: 'http://www.neo-geo.com/ubb/Avatars/KOF2K2_Andy_Bogard.jpg', shape: 'image'},
+                {id: 'Axel Hawk', label: 'Axel Hawk', image:'http://www.fightabase.com/images/chars/select/axel_faf-84.png', shape:'image'},
+                {id: 'Billy Kane', label: 'Billy Kane', image: 'http://cdn.wikimg.net/strategywiki/images/thumb/0/09/Portrait_FF_Billy.png/64px-Portrait_FF_Billy.png', shape:'image'},
+                {id: 'Blue Mary Ryan', label: 'Blue Mary Ryan', shape:'image', image:'http://www.neo-geo.com/ubb/Avatars/rb2_marywin.gif'},
+                {id: 'Bob Wilson', label: 'Bob Wilson', shape:'image', image: 'http://www.fightersgeneration.com/characters/cf2_bobw.gif'},
+                {id: 'Bonne Jennet', label: 'Bonne Jennet', shape:'image', image: 'http://www.fightersgeneration.com/characters/cf2_bjenet.gif'},
+                {id: 'Cheng Sinzan', label: 'Cheng Sinzan', shape:'image', image:'http://www.fightersgeneration.com/characters/cf2_cheng.gif'},
+                {id: 'Duck King', label: 'Duck King', shape: 'image', image: 'http://cdn.wikimg.net/strategywiki/images/thumb/3/38/Portrait_FF_Duck_King.png/64px-Portrait_FF_Duck_King.png'},
+                {id: 'Elza', label: 'Elza'},
+                {id: 'Franco Bash', label: 'Franco Bash'},
+                {id: 'Freeman', label: 'Freeman', shape:'image', image:'http://www.fightersgeneration.com/characters/cf2_freeman.gif'},
+                {id: 'Gato', label: 'Gato', shape:'image', image: 'http://www.fightersgeneration.com/characters/cf2_gato.gif'},
+                {id: 'Geese Howard', label: 'Geese Howard', shape:'image', image: 'http://cdn.wikimg.net/strategywiki/images/thumb/e/e5/Portrait_CVS_Geese.png/64px-Portrait_CVS_Geese.png'},
+                {id: 'Grant', label: 'Grant', shape:'image', image: 'http://www.fightersgeneration.com/characters/cf2_grant.gif'},
+                {id: 'Hanzo Shiranui', label: 'Hanzo Shiranui'},
+                {id: 'Hokutomaru', label: 'Hokutomaru', shape:'image', image: 'http://www.fightersgeneration.com/characters/cf2_hokutomaru.gif'},
+                {id: 'Hon Fu', label: 'Hon Fu', shape:'image', image: 'http://www.fightersgeneration.com/characters/cf2_honfu.gif'},
+                {id: 'Hotaru Futaba', label: 'Hotaru Futaba', shape:'image', image:'http://cdn.wikimg.net/strategywiki/images/thumb/b/b0/Portrait_GarouMOTW_Hotaru.png/64px-Portrait_GarouMOTW_Hotaru.png'},
+                {id: 'Hwa Jai', label: 'Hwa Jai', shape:'image', image: 'http://images-mediawiki-sites.thefullwiki.org/11/2/7/3/9600592078327247.png'},
+                {id: 'Itokatsu', label: 'Itokatsu'},
+                {id: 'Jeff Bogard', label: 'Jeff Bogard'},
+                {id: 'Jin Chonrei', label: 'Jin Chonrei', shape:'image', image:'http://www.fightersgeneration.com/characters/cf2_chonrei.gif'},
+                {id: 'Jin Chonshu', label: 'Jin Chonshu', shape:'image', image:'http://www.fightersgeneration.com/characters/cf2_chonshu.gif'},
+                {id: 'Joe Higashi', label: 'Joe Higashi', shape:'image', image: 'http://cdn.wikimg.net/strategywiki/images/thumb/d/d3/Portrait_FF_Joe.png/64px-Portrait_FF_Joe.png'},
+                {id: 'Jubei Yamada', label: 'Jubei Yamada', shape:'image', image:'http://www.fightabase.com/images/chars/select/jubei_faf-84.png'},
+                {id: 'Junior', label: 'Junior'},
+                {id: 'Kain R. Heinlein', label: 'Kain R. Heinlein', shape:'image', image: 'http://data.over-blog-kiwi.com/0/18/41/19/201210/ob_4dc835_fileportrait-garoumotw-kain.png'},
+                {id: 'Kevin Rian', label: 'Kevin Rian', shape:'image', image:'http://data.over-blog-kiwi.com/0/18/41/19/201210/ob_31103d_fileportrait-garoumotw-kevin.png'},
+                {id: 'Khushnood Butt', label: 'Khushnood Butt'},
+                {id: 'Kim Dong Hwan', label: 'Kim Dong Hwan', shape:'image', image:'http://data.over-blog-kiwi.com/0/18/41/19/201210/ob_0c97cf_fileportrait-garoumotw-dong-hwan.png'},
+                {id: 'Kim Jae Hoon', label: 'Kim Jae Hoon', shape:'image', image:'http://data.over-blog-kiwi.com/0/18/41/19/201210/ob_d08abc_fileportrait-garoumotw-jae-hoon.png'},
+                {id: 'Kim Kaphwan', label: 'Kim Kaphwan', shape:'image', image:'http://cdn.wikimg.net/strategywiki/images/thumb/9/9c/Portrait_CVS_Kim.png/64px-Portrait_CVS_Kim.png'},
+                {id: 'King', label: 'King', shape:'image', image : 'http://www.neo-arcadia.com/forum/images/avatars/gallery/SNK/king.gif'},
+                {id: 'Lao', label: 'Lao'},
+                {id: 'Laurence Blood', label: 'Laurence Blood', shape:'image', image: 'http://www.fightabase.com/images/chars/select/laurence_faf-84.png'},
+                {id: 'Li Xiangfei', label: 'Li Xiangfei', shape:'image', image: 'http://www.fightersgeneration.com/characters4/cf2_xiangfei.gif'},
+                {id: 'Lilly Kane', label: 'Lilly Kane'},
+                {id: 'Mai Shiranui', label: 'Mai Shiranui', shape:'image', image: "http://cdn.wikimg.net/strategywiki/images/thumb/e/ef/Portrait_NGBC_Mai.png/64px-Portrait_NGBC_Mai.png"},
+                {id: 'Maria', label: 'Maria'},
+                {id: 'Marie Heinlein', label: 'Marie Heinlein'},
+                {id: 'Marky', label: 'Marky'},
+                {id: 'Michael', label: 'Michael'},
+                {id: 'Michael Max', label: 'Michael Max', shape:'image', image:'http://cdn.wikimg.net/strategywiki/images/thumb/7/7d/Portrait_FF_Michael.png/64px-Portrait_FF_Michael.png'},
+                {id: 'Raiden_Big Bear', label: 'Raiden / Big Bear', shape:'image', image:'http://www.fightabase.com/images/chars/select/bear_faf-84.png'},
+                {id: 'Richard Meyer', label: 'Richard Meyer', shape:'image', image:'http://cdn.wikimg.net/strategywiki/images/thumb/8/8e/Portrait_FF_Richard.png/64px-Portrait_FF_Richard.png'},
+                {id: 'Rick Strowd', label: 'Rick Strowd', shape:'image', image: 'http://www.neo-geo.com/ubb/Avatars/rb2_rickwin.gif'},
+                {id: 'Rock Howard', label: 'Rock Howard', image: 'http://www.neo-geo.com/ubb/Avatars/rock2.gif', shape:'image'},
+                {id: 'Rudolph Krauser Von Stroheim', label: 'Rudolph Krauser Von Stroheim'},
+                {id: 'Ryo Sakazaki', label: 'Ryo Sakazaki', shape:'image', image: 'http://cdn.wikimg.net/strategywiki/images/thumb/5/53/Portrait_CVS_Ryo_EX.png/64px-Portrait_CVS_Ryo_EX.png'},
+                {id: 'Sokaku Mochizuki', label: 'Sokaku Mochizuki'},
+                {id: 'Terry Bogard', label: 'Terry Bogard', image: 'http://cdn.wikimg.net/strategywiki/images/thumb/7/7c/Portrait_CVS_Terry_EX.png/64px-Portrait_CVS_Terry_EX.png', shape: 'image'},
+                {id: 'Tizoc', label: 'Tizoc', shape:'image', image:'http://data.over-blog-kiwi.com/0/18/41/19/201210/ob_7f1e0e_fileportrait-garoumotw-tizoc.png'},
+                {id: 'Tung Fu Rue', label: 'Tung Fu Rue', shape:'image', image: 'http://www.neo-geo.com/ubb/Avatars/ex_tungrbsportrait.gif'},
+                {id: 'Ukee', label: 'Ukee'},
+                {id: 'White', label: 'White'},
+                {id: 'Wolfgang Krauser', label: 'Wolfgang Krauser', shape:'image', image: 'http://www.fightabase.com/images/chars/select/krauser_faf-84.png'},
+                {id: 'Yamazaki', label: 'Yamazaki', shape:'image', image: 'http://cdn.wikimg.net/strategywiki/images/thumb/e/ea/Portrait_CVS_Yamazaki.png/64px-Portrait_CVS_Yamazaki.png'},
+            ];
+
+            edges = [
+                {from: 'Geese Howard', to: 'Jeff Bogard', style: 'arrow', label: 'a tué'},
+                {from: 'Terry Bogard', to: 'Jeff Bogard', style: 'arrow', label: 'est le fils adoptif de'},
+                {from: 'Andy Bogard', to: 'Jeff Bogard', style: 'arrow', label: 'est le fils adoptif de'},
+                {from: 'Andy Bogard', to: 'Terry Bogard', style: 'arrow', label: 'est le frère de'},
+                {from: 'Terry Bogard', to: 'Andy Bogard', style: 'arrow', label: 'est le frère de'},
+                {from: 'Andy Bogard', to: 'Mai Shiranui', style: 'arrow', label: 'est fiancé à'},
+                {from: 'Mai Shiranui', to: 'Andy Bogard', style: 'arrow', label: 'est fiancée à'},
+                {from: 'Billy Kane', to: 'Geese Howard', style: 'arrow', label: 'est le bras droit de'},
+                {from: 'Joe Higashi', to: 'Terry Bogard', style: 'arrow', label: "est l'ami de"},
+                {from: 'Terry Bogard', to: 'Joe Higashi', style: 'arrow', label: "est l'ami de"},
+                {from: 'Joe Higashi', to: 'Andy Bogard', style: 'arrow', label: "est l'ami de"},
+                {from: 'Andy Bogard', to: 'Joe Higashi', style: 'arrow', label: "est l'ami de"},
+                {from: 'Jin Chonrei', to: 'Jin Chonshu', style: 'arrow', label: 'est le frère de'},
+                {from: 'Jin Chonshu', to: 'Jin Chonrei', style: 'arrow', label: 'est le frère de'},
+                {from: 'Rock Howard', to: 'Geese Howard', style: 'arrow', label: 'est le fils de'},
+                {from: 'Kim Dong Hwan', to: 'Kim Kaphwan', style: 'arrow', label: 'est le fils de'},
+                {from: 'Kim Jae Hoon', to: 'Kim Kaphwan', style: 'arrow', label: 'est le fils de'},
+                {from: 'Terry Bogard', to: 'Ukee', style: 'arrow', label: 'est le propriétaire de'},
+                {from: 'Tung Fu Rue', to: 'Jeff Bogard', style: 'arrow', label: 'est le mentor de'},
+                {from: 'Tung Fu Rue', to: 'Geese Howard', style: 'arrow', label: 'est le mentor de'},
+                {from: 'Tung Fu Rue', to: 'Cheng Sinzan', style: 'arrow', label: 'est le mentor de'},
+                {from: 'Tung Fu Rue', to: 'Terry Bogard', style: 'arrow', label: 'a entraîné'},
+                {from: 'Geese Howard', to: 'Wolfgang Krauser', style: 'arrow', label: 'est le demi frère de'},
+                {from: 'Wolfgang Krauser', to: 'Geese Howard', style: 'arrow', label: 'est le demi frère de'},
+                {from: 'Terry Bogard', to: 'Geese Howard', style: 'arrow', label: 'a tué'},
+                {from: 'Terry Bogard', to: 'Rock Howard', style: 'arrow', label: 'a entrainé'},
+                {from: 'Terry Bogard', to: 'Wolfgang Krauser', style: 'arrow', label: 'a battu'},
+                {from: 'Andy Bogard', to: 'Hanzo Shiranui', style: 'arrow', label: 'a été entrainé par'},
+                {from: 'Andy Bogard', to: 'Hokutomaru', style: 'arrow', label: 'a entraîné'},
+                {from: 'Joe Higashi', to: 'Lilly Kane', style: 'arrow', label: 'est en couple avec'},
+                {from: 'Lilly Kane', to: 'Joe Higashi', style: 'arrow', label: 'est en couple avec'},
+                {from: 'Lilly Kane', to: 'Billy Kane', style: 'arrow', label: 'est la soeur de'},
+                {from: 'Billy Kane', to: 'Lilly Kane', style: 'arrow', label: 'est le frère de'},
+                {from: 'Hwa Jai', to: 'Wolfgang Krauser', style: 'arrow', label: 'a été battu par'},
+                {from: 'Hwa Jai', to: 'Joe Higashi', style: 'arrow', label: 'est le rival et ami de'},
+                {from: 'Joe Higashi', to: 'Hwa Jai', style: 'arrow', label: 'est le rival et ami de'},
+                {from: 'Joe Higashi', to: 'King', style: 'arrow', label: 'est le rival de'},
+                {from: 'King', to: 'Joe Higashi', style: 'arrow', label: 'est la rivale de'},
+                {from: 'Axel Hawk', to: 'Wolfgang Krauser', style: 'arrow', label: 'a été repéré par'},
+                {from: 'Michael Max', to: 'Axel Hawk', style: 'arrow', label: 'a été entrainé par'},
+                {from: 'Axel Hawk', to: 'Franco Bash', style: 'arrow', label: 'est proche de'},
+                {from: 'Franco Bash', to: 'Axel Hawk', style: 'arrow', label: 'est proche de'},
+                {from: 'Hwa Jai', to: 'Geese Howard', style: 'arrow', label: 'est le sbire de'},
+                {from: 'Raiden_Big Bear', to: 'Geese Howard', style: 'arrow', label: 'est le sbire de'},
+                {from: 'Billy Kane', to: 'Wolfgang Krauser', style: 'arrow', label: 'est le sbire de'},
+                {from: 'Billy Kane', to: 'White', style: 'arrow', label: 'a subi un lavage de cerveau par'},
+                {from: 'Geese Howard', to: 'Rudolph Krauser Von Stroheim', style: 'arrow', label: 'est le fis de'},
+                {from: 'Wolfgang Krauser', to: 'Rudolph Krauser Von Stroheim', style: 'arrow', label: 'est le fis de'},
+                {from: 'Geese Howard', to: 'Blue Mary Ryan', style: 'arrow', label: 'a été entraîné par le grand père de'},
+                {from: 'Mai Shiranui', to: 'Hanzo Shiranui', style: 'arrow', label: 'est la petite fille de'},
+                {from: 'Mai Shiranui', to: 'Jubei Yamada', style: 'arrow', label: 'a été entraînée par'},
+                {from: 'Jubei Yamada', to: 'Hanzo Shiranui', style: 'arrow', label: 'est ami avec'},
+                {from: 'Kim Dong Hwan', to: 'Kim Jae Hoon', style: 'arrow', label: 'est le frère de'},
+                {from: 'Laurence Blood', to: 'Wolfgang Krauser', style: 'arrow', label: 'est le sbire de'},
+                {from: 'Rudolph Krauser Von Stroheim', to: 'Elza', style: 'arrow', label: 'est marié à'},
+                {from: 'Rudolph Krauser Von Stroheim', to: 'Geese Howard', style: 'arrow', label: 'est le père de'},
+                {from: 'Maria', to: 'Geese Howard', style: 'arrow', label: 'est la mère de'},
+                {from: 'Elza', to: 'Michael', style: 'arrow', label: 'est la petite fille de'},
+                {from: 'Hanzo Shiranui', to: 'Wolfgang Krauser', style: 'arrow', label: 'a combattu'},
+                {from: 'Jeff Bogard', to: 'Wolfgang Krauser', style: 'arrow', label: 'a combattu'},
+                {from: 'Richard Meyer', to: 'Bob Wilson', style: 'arrow', label: 'a entraîné'},
+                {from: 'Yamazaki', to: 'Junior', style: 'arrow', label: 'a kidnappé'},
+                {from: 'Junior', to: 'Franco Bash', style: 'arrow', label: 'est le fils de'},
+                {from: 'Franco Bash', to: 'Yamazaki', style: 'arrow', label: 'est le bras droit de'},
+                {from: 'Hon Fu', to: 'Yamazaki', style: 'arrow', label: 'enquête sur'},
+                {from: 'Hon Fu', to: 'Kim Kaphwan', style: 'arrow', label: 'est ami avec'},
+                {from: 'Hon Fu', to: 'Cheng Sinzan', style: 'arrow', label: 'est ami avec'},
+                {from: 'Sokaku Mochizuki', to: 'Sokaku Mochizuki', style: 'arrow', label: 'rival du clan Shiranui'},
+                {from: 'Jin Chonrei', to: 'Yamazaki', style: 'arrow', label: 'a engagé'},
+                {from: 'Jin Chonshu', to: 'Yamazaki', style: 'arrow', label: 'a engagé'},
+                {from: 'Tung Fu Rue', to: 'Jin Chonrei', style: 'arrow', label: 'a recueilli'},
+                {from: 'Tung Fu Rue', to: 'Jin Chonshu', style: 'arrow', label: 'a recueilli'},
+                {from: 'Jin Chonshu', to: 'Kim Kaphwan', style: 'arrow', label: 'a été entrainé par'},
+                {from: 'Alfred', to: 'White', style: 'arrow', label: 'est le rival de'},
+                {from: 'Rick Strowd', to: 'Lao', style: 'arrow', label: 'a battu '},
+                {from: 'Li Xiangfei', to: 'Lao', style: 'arrow', label: 'a battu '},
+                {from: 'Terry Bogard', to: 'Lao', style: 'arrow', label: 'a battu '},
+                {from: 'Rock Howard', to: 'Marie Heinlein', style: 'arrow', label: 'est le fils de'},
+                {from: 'Marie Heinlein', to: 'Kain R. Heinlein', style: 'arrow', label: 'est le_la frère_soeur de'},
+                {from: 'Marie Heinlein', to: 'Geese Howard', style: 'arrow', label: '<-est marié(e) à'},
+                {from: 'Rock Howard', to: 'Hotaru Futaba', style: 'arrow', label: 'est ami(e) avec'},
+                {from: 'Rock Howard', to: 'Kim Jae Hoon', style: 'arrow', label: 'est ami avec'},
+                {from: 'Rock Howard', to: 'Kim Dong Hwan', style: 'arrow', label: 'est ami avec'},
+                {from: 'Tizoc', to: 'Gato', style: 'arrow', label: 'a été battu par le père de'},
+                {from: 'Khushnood Butt', to: 'Ryo Sakazaki', style: 'arrow', label: 'est le disciple de'},
+                {from: 'Geese Howard', to: 'Ryo Sakazaki', style: 'arrow', label: 'a enlevé la soeur de'},
+                {from: 'Hotaru Futaba', to: 'Gato', style: 'arrow', label: 'est la soeur problable de'},
+                {from: 'Gato', to: 'Hotaru Futaba', style: 'arrow', label: 'est le frère problable de'},
+                {from: 'Freeman', to: 'Kevin Rian', style: 'arrow', label: 'a tué le partenaire de'},
+                {from: 'Hotaru Futaba', to: 'Itokatsu', style: 'arrow', label: 'est la propriétaire de'},
+                {from: 'Kevin Rian', to: 'Blue Mary Ryan', style: 'arrow', label: 'a un lien avec'},
+                {from: 'Blue Mary Ryan', to: 'Kevin Rian', style: 'arrow', label: 'a un lien avec'},
+                {from: 'Kevin Rian', to: 'Marky', style: 'arrow', label: 'élève'},
+                {from: 'Marky', to: 'Kevin Rian', style: 'arrow', label: 'est le fils du partenaire de'},
+                {from: 'Kevin Rian', to: 'Terry Bogard', style: 'arrow', label: 'pensait que le meurtrier de son partenaire était'},
+                {from: 'Bonne Jennet', to: 'Kain R. Heinlein', style: 'arrow', label: 'voulait voler'},
+                {from: 'Mai Shiranui', to: 'Hokutomaru', style: 'arrow', label: 'se considère comme la soeur de'},
+                {from: 'Hokutomaru', to: 'Mai Shiranui', style: 'arrow', label: 'se considère comme le soeur de'},
+                {from: 'Grant', to: 'Kain R. Heinlein', style: 'arrow', label: "est l'ami de"},
+                {from: 'Grant', to: 'Marie Heinlein', style: 'arrow', label: "est l'ami de"}
+
+
+            ];
+
+            var container = document.getElementById('mynetwork');
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                stabilize: false,
+                smoothCurves: false,
+                physics: {
+                    barnesHut: {
+                        //enabled: true,
+                        //gravitationalConstant: -2000,
+                        //centralGravity: 0.1,
+                        //springLength: 95,
+                        //springConstant: 0.04,
+                        //damping: 0.09
+                    },
+                    repulsion: {
+                        //centralGravity: 0.1,
+                        //springLength: 500,
+                        //springConstant: 0.05,
+                        //damping: 1.009,
+                        nodeDistance: 500
+                    },
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
+    </script>
+</head>
+<button id="javascript-popup-blocker-notify" style="display: none;"></button>
+
+<body onload="draw()">
+<div id="mynetwork">
+    <div class="network-frame" style="position: relative; overflow: hidden; width: 100%; height: 100%;">
+        <canvas style="position: relative; -webkit-user-select: none; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 100%; height: 100%;"></canvas>
+    </div>
+</div>
+
+</body>
+</html>
