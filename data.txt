@@ -1,86 +1,109 @@
-[Geese Howard]a tué->[Jeff Bogard]
-[Terry Bogard]est le fils adoptif de->[Jeff Bogard]
-[Andy Bogard]est le fils adoptif de->[Jeff Bogard]
-[Andy Bogard]<-est le frère de->[Terry Bogard]
-[Andy Bogard]<-est fiancé(e) à->[Mai Shiranui]
-[Billy Kane]est le bras droit de->[Geese Howard]
-[Joe Higashi]<-est l'ami de->[Terry Bogard]
-[Joe Higashi]<-est l'ami de->[Andy Bogard]
-[Jin Chonrei]<-est le frère de->[Jin Chonshu]
-[Rock Howard]est le fils de->[Geese Howard]
-[Kim Dong Hwan]est le fils de->[Kim Kaphwan]
-[Kim Jae Hoon]est le fils de->[Kim Kaphwan]
-[Terry Bogard]-est le propriétaire de>[Ukee]
-[Tung Fu Rue]est le mentor de->[Jeff Bogard]
-[Tung Fu Rue]est le mentor de->[Geese Howard]
-[Tung Fu Rue]-est le mentor de>[Cheng Sinzan]
-[Tung Fu Rue]a entraîné->[Terry Bogard]
-[Geese Howard]<-est le demi frère de->[Wolfgang Krauser]
-[Terry Bogard]-a tué>[Geese Howard]
-[Terry Bogard]a entrainé->[Rock Howard]
-[Terry Bogard]-a battu>[Wolfgang Krauser]
-[Andy Bogard]-a été entrainé par>[Hanzo Shiranui]
-[Andy Bogard]-a entraîné->[Hokutomaru]
-[Joe Higashi]est en couple avec->[Lilly Kane]
-[Lilly Kane]<-est le_la frère_soeur de->[Billy Kane]
-[Hwa Jai]a été battu par->[Wolfgang Krauser]
-[Hwa Jai]<-est le rival_ami de->[Joe Higashi]
-[Joe Higashi]<-est le_la rivale de->[King]
-[Axel Hawk]-a été repéré par>[Wolfgang Krauser]
-[Michael Max]a été entrainé par->[Axel Hawk]
-[Axel Hawk]-est proche de>[Franco Bash]
-[Hwa Jai]est le sbire de->[Geese Howard]
-[Raiden_Big Bear]est le sbire de->[Geese Howard]
-[Billy Kane]est le sbire de->[Wolfgang Krauser]
-[Billy Kane]a subi un lavage de cerveau par->[White]
-[Geese Howard]est le fis de->[Rudolph Krauser Von Stroheim]
-[Wolfgang Krauser]est le fis de->[Rudolph Krauser Von Stroheim]
-[Geese Howard]a été entraîné par le grand père de->[Blue Mary Ryan]
-[Mai Shiranui]est la petite fille de->[Hanzo Shiranui]
-[Mai Shiranui]a été entraînée par->[Jubei Yamada]
-[Jubei Yamada]<-est ami avec->[Hanzo Shiranui]
-[Kim Dong Hwan]<-est le frère de->[Kim Jae Hoon]
-[Laurence Blood]est le sbire de->[Wolfgang Krauser]
-[Rudolph Krauser Von Stroheim]<-est marié(e) à->[Elza]
-[Rudolph Krauser Von Stroheim]est le père de->[Geese Howard]
-[Maria]est la mère de->[Geese Howard]
-[Elza]est la petite fille de->[Michael]
-[Hanzo Shiranui]<-a combattu->[Wolfgang Krauser]
-[Jeff Bogard]<-a combattu->[Wolfgang Krauser]
-[Richard Meyer]a entraîné->[Bob Wilson]
-[Yamazaki]a kidnappé->[Junior]
-[Junior]est le fils de->[Franco Bash]
-[Franco Bash]est le bras droit de->[Yamazaki]
-[Hon Fu]enquête sur->[Yamazaki]
-[Hon Fu]<-est ami avec->[Kim Kaphwan]
-[Hon Fu]<-est ami avec->[Cheng Sinzan]
-[Sokaku Mochizuki]rival du clan Shiranui->[Sokaku Mochizuki]
-[Jin Chonrei]a engagé->[Yamazaki]
-[Jin Chonshu]a engagé->[Yamazaki]
-[Tung Fu Rue]a recueilli->[Jin Chonrei]
-[Tung Fu Rue]a recueilli->[Jin Chonshu]
-[Jin Chonshu]a été entrainé par->[Kim Kaphwan]
-[Alfred]<-est le rival de->[White]
-[Rick Strowd]a battu ->[Lao]
-[Li Xiangfei]a battu ->[Lao]
-[Terry Bogard]a battu ->[Lao]
-[Rock Howard]est le fils de->[Marie Heinlein]
-[Marie Heinlein]<-est le_la frère_soeur de->[Kain R. Heinlein]
-[Marie Heinlein]<-est marié(e) à->[Geese Howard]
-[Rock Howard]<-est ami(e) avec->[Hotaru Futaba]
-[Rock Howard]<- est amis avec->[Kim Jae Hoon]
-[Rock Howard]<- est amis avec->[Kim Dong Hwan]
-[Tizoc]a été battu par le père de->[Gato]
-[Khushnood Butt]est le disciple de->[Ryo Sakazaki]
-[Geese Howard]a enlevé la soeur de->[Ryo Sakazaki]
-[Hotaru Futaba]<-est le_la frère_soeur problable de->[Gato]
-[Freeman]a tué le partenaire de->[Kevin Rian]
-[Hotaru Futaba]est la propriétaire de->[Itokatsu]
-[Kevin Rian]<-ont un lien->[Blue Mary Ryan]
-[Kevin Rian]élève->[Marky]
-[Marky]est le fils du partenaire de->[Kevin Rian]
-[Kevin Rian]pensait que le meurtrier de son partenaire était->[Terry Bogard]
-[Bonne Jennet]voulait voler->[Kain R. Heinlein]
-[Mai Shiranui]<-se considère comme frère_soeur de->[Hokutomaru]
-[Grant]<-est l'ami(e) de->[Kain R. Heinlein]
-[Grant]<-est l'ami(e) de->[Marie Heinlein]
+{from: 'Geese Howard', to: 'Jeff Bogard', label: 'KILLED', color: KILLED},
+        {from: 'Terry Bogard', to: 'Jeff Bogard', label: 'ADOPTED FAMILY (SON)', color: FAMILY},
+        {from: 'Andy Bogard', to: 'Jeff Bogard', label: 'ADOPTED FAMILY (SON)', color: FAMILY},
+        {from: 'Andy Bogard', to: 'Terry Bogard', label: 'FAMILY (BROTHER)', color: FAMILY},
+        {from: 'Terry Bogard', to: 'Andy Bogard', label: 'FAMILY (BROTHER)', color: FAMILY},
+        {from: 'Andy Bogard', to: 'Mai Shiranui', label: 'LOVE', color: LOVE},
+        {from: 'Mai Shiranui', to: 'Andy Bogard', label: 'LOVE', color: LOVE},
+        {from: 'Billy Kane', to: 'Geese Howard', label: 'BOSS', color: BOSS},
+        {from: 'Joe Higashi', to: 'Terry Bogard', label: "FRIENDS", color: FRIENDS},
+        {from: 'Terry Bogard', to: 'Joe Higashi', label: "FRIENDS", color: FRIENDS},
+        {from: 'Joe Higashi', to: 'Andy Bogard', label: "FRIENDS", color: FRIENDS},
+        {from: 'Andy Bogard', to: 'Joe Higashi', label: "FRIENDS", color: FRIENDS},
+        {from: 'Jin Chonrei', to: 'Jin Chonshu', label: 'FAMILY (BROTHER)', color: FAMILY},
+        {from: 'Jin Chonshu', to: 'Jin Chonrei', label: 'FAMILY (BROTHER)', color: FAMILY},
+        {from: 'Rock Howard', to: 'Geese Howard', label: 'FAMILY (SON)', color: FAMILY},
+        {from: 'Kim Dong Hwan', to: 'Kim Kaphwan', label: 'FAMILY (SON)', color: FAMILY},
+        {from: 'Kim Jae Hoon', to: 'Kim Kaphwan', label: 'FAMILY (SON)', color: FAMILY},
+        {from: 'Terry Bogard', to: 'Ukee', label: 'OWNS'},
+        {from: 'Tung Fu Rue', to: 'Jeff Bogard', label: 'STUDENT', color: STUDENT},
+        {from: 'Tung Fu Rue', to: 'Geese Howard', label: 'STUDENT', color: STUDENT},
+        {from: 'Tung Fu Rue', to: 'Cheng Sinzan', label: 'STUDENT', color: STUDENT},
+        {from: 'Tung Fu Rue', to: 'Terry Bogard', label: 'STUDENT', color: STUDENT},
+        {from: 'Geese Howard', to: 'Wolfgang Krauser', label: 'FAMILY (HALF BROTHER)', color: FAMILY},
+        {from: 'Wolfgang Krauser', to: 'Geese Howard', label: 'FAMILY (HALF BROTHER)', color: FAMILY},
+        {from: 'Terry Bogard', to: 'Geese Howard', label: 'KILLED', color: KILLED},
+        {from: 'Terry Bogard', to: 'Rock Howard', label: 'STUDENT', color: STUDENT},
+        {from: 'Terry Bogard', to: 'Wolfgang Krauser', label: 'ENEMY', color: ENEMY},
+        {from: 'Hanzo Shiranui', to: 'Andy Bogard', label: 'STUDENT', color: STUDENT},
+        {from: 'Andy Bogard', to: 'Hokutomaru', label: 'STUDENT', color: STUDENT},
+        {from: 'Joe Higashi', to: 'Lilly Kane', label: 'LOVE', color: LOVE},
+        {from: 'Lilly Kane', to: 'Joe Higashi', label: 'LOVE', color: LOVE},
+        {from: 'Lilly Kane', to: 'Billy Kane', label: 'FAMILY (SISTER)', color: FAMILY},
+        {from: 'Billy Kane', to: 'Lilly Kane', label: 'FAMILY (BROTHER)', color: FAMILY},
+        {from: 'Hwa Jai', to: 'Wolfgang Krauser', label: 'BEATEN'},
+        {from: 'Hwa Jai', to: 'Joe Higashi', label: 'ENEMY', color: ENEMY},
+        {from: 'Joe Higashi', to: 'Hwa Jai', label: 'ENEMY', color: ENEMY},
+        {from: 'Joe Higashi', to: 'King', label: 'ENEMY', color: ENEMY},
+        {from: 'King', to: 'Joe Higashi', label: 'ENEMY', color: ENEMY},
+        {from: 'Axel Hawk', to: 'Wolfgang Krauser', label: 'ACQUAINTANCE'},
+        {from: 'Michael Max', to: 'Axel Hawk', label: 'STUDENT', color: STUDENT},
+        {from: 'Axel Hawk', to: 'Franco Bash', label: 'ACQUAINTANCE'},
+        {from: 'Franco Bash', to: 'Axel Hawk', label: 'ACQUAINTANCE'},
+        {from: 'Hwa Jai', to: 'Geese Howard', label: 'BOSS', color: BOSS},
+        {from: 'Raiden_Big Bear', to: 'Geese Howard', label: 'BOSS', color: BOSS},
+        {from: 'Billy Kane', to: 'Wolfgang Krauser', label: 'BOSS', color: BOSS},
+        {from: 'Billy Kane', to: 'White', label: 'BRAINWASH'},
+        {from: 'Wolfgang Krauser', to: 'Rudolph Krauser Von Stroheim', label: 'FAMILY (SON)', color: FAMILY},
+        {from: 'Blue Mary Ryan Grand Father', to: 'Geese Howard', label: 'STUDENT', color: STUDENT},
+        {from: 'Mai Shiranui', to: 'Hanzo Shiranui', label: 'FAMILY (GRAND DAUGHTER)', color: FAMILY},
+        {from: 'Jubei Yamada', to: 'Mai Shiranui', label: 'STUDENT', color: STUDENT},
+        {from: 'Jubei Yamada', to: 'Hanzo Shiranui', label: 'FRIENDS', color: FRIENDS},
+        {from: 'Kim Dong Hwan', to: 'Kim Jae Hoon', label: 'FAMILY (BROTHER)', color: FAMILY},
+        {from: 'Kim Jae Hoon', to: 'Kim Dong Hwan', label: 'FAMILY (BROTHER)', color: FAMILY},
+        {from: 'Laurence Blood', to: 'Wolfgang Krauser', label: 'BOSS', color: BOSS},
+        {from: 'Rudolph Krauser Von Stroheim', to: 'Elza', label: 'FAMILY (HUSBAND)', color: FAMILY},
+        {from: 'Rudolph Krauser Von Stroheim', to: 'Geese Howard', label: 'FAMILY (FATHER)', color: FAMILY},
+        {from: 'Geese Howard', to: 'Rudolph Krauser Von Stroheim', label: 'FAMILY (SON)', color: FAMILY},
+        {from: 'Maria', to: 'Geese Howard', label: 'FAMILY (MOTHER)', color: FAMILY},
+        {from: 'Elza', to: 'Michael', label: 'FAMILY (GRAND DAUGHTER)', color: FAMILY},
+        {from: 'Hanzo Shiranui', to: 'Wolfgang Krauser', label: 'ENEMY', color: ENEMY},
+        {from: 'Jeff Bogard', to: 'Wolfgang Krauser', label: 'ENEMY', color: ENEMY},
+        {from: 'Richard Meyer', to: 'Bob Wilson', label: 'STUDENT', color: STUDENT},
+        {from: 'Richard Meyer', to: 'Terry Bogard', label: 'ENEMY', color: ENEMY},
+        {from: 'Yamazaki', to: 'Junior', label: 'ABDUCTED'},
+        {from: 'Junior', to: 'Franco Bash', label: 'FAMILY (SON)', color: FAMILY},
+        {from: 'Franco Bash', to: 'Yamazaki', label: 'BOSS', color: BOSS},
+        {from: 'Hon Fu', to: 'Yamazaki', label: 'ENEMY', color: ENEMY},
+        {from: 'Hon Fu', to: 'Kim Kaphwan', label: 'FRIENDS', color: FRIENDS},
+        {from: 'Hon Fu', to: 'Cheng Sinzan', label: 'FRIENDS', color: FRIENDS},
+        {from: 'Sokaku Mochizuki', to: 'Jin Chonrei', label: 'STEAL'},
+        {from: 'Sokaku Mochizuki', to: 'Jin Chonshu', label: 'STEAL'},
+        {from: 'Yamazaki', to: 'Jin Chonrei', label: 'BOSS', color: BOSS},
+        {from: 'Yamazaki', to: 'Jin Chonshu', label: 'BOSS', color: BOSS},
+        {from: 'Tung Fu Rue', to: 'Jin Chonrei', label: 'STUDENT', color: STUDENT},
+        {from: 'Tung Fu Rue', to: 'Jin Chonshu', label: 'STUDENT', color: STUDENT},
+        {from: 'Kim Kaphwan', to: 'Jin Chonshu', label: 'STUDENT', color: STUDENT},
+        {from: 'Alfred', to: 'White', label: 'ENEMY', color: ENEMY},
+        {from: 'Rick Strowd', to: 'Lao', label: 'ENEMY', color: ENEMY},
+        {from: 'Li Xiangfei', to: 'Lao', label: 'ENEMY', color: ENEMY},
+        {from: 'Terry Bogard', to: 'Lao', label: 'ENEMY', color: ENEMY},
+        {from: 'Duck King', to: 'Terry Bogard', label: 'ENEMY', color: ENEMY},
+        {from: 'Rock Howard', to: 'Marie Heinlein', label: 'FAMILY (SON)', color: FAMILY},
+        {from: 'Marie Heinlein', to: 'Kain R. Heinlein', label: 'FAMILY (SISTER)', color: FAMILY},
+        {from: 'Marie Heinlein', to: 'Geese Howard', label: 'FAMILY (WIFE)', color: FAMILY},
+        {from: 'Rock Howard', to: 'Hotaru Futaba', label: 'FRIENDS', color: FRIENDS},
+        {from: 'Rock Howard', to: 'Kim Jae Hoon', label: 'FRIENDS', color: FRIENDS},
+        {from: 'Rock Howard', to: 'Kim Dong Hwan', label: 'FRIENDS', color: FRIENDS},
+        {from: 'Tizoc', to: 'Gato Father', label: 'BEATEN'},
+        {from: 'Gato', to: 'Gato Father', label: 'FAMILY (SON)', color: FAMILY},
+        {from: 'Ryo Sakazaki', to: 'Khushnood Butt', label: 'STUDENT', color: STUDENT},
+        {from: 'Geese Howard', to: 'Yuri Sakazaki', label: 'ABDUCTED'},
+        {from: 'Yuri Sakazaki', to: 'Ryo Sakazaki', label: 'FAMILY (SISTER)', color: FAMILY},
+        {from: 'Hotaru Futaba', to: 'Gato', label: 'FAMILY (MAYBE SISTER)', color: FAMILY},
+        {from: 'Gato', to: 'Hotaru Futaba', label: 'FAMILY (MAYBE BROTHER)', color: FAMILY},
+        {from: 'Freeman', to: 'Kevin Rian Partner', label: 'KILLED', color: KILLED},
+        {from: 'Kevin Rian', to: 'Kevin Rian Partner', label: 'FRIENDS', color: FRIENDS},
+        {from: 'Kevin Rian Partner', to: 'Kevin Rian', label: 'FRIENDS', color: FRIENDS},
+        {from: 'Hotaru Futaba', to: 'Itokatsu', label: 'OWNS'},
+        {from: 'Kevin Rian', to: 'Blue Mary Ryan', label: 'ACQUAINTANCE'},
+        {from: 'Blue Mary Ryan', to: 'Kevin Rian', label: 'ACQUAINTANCE'},
+        {from: 'Blue Mary Ryan Grand Father', to: 'Blue Mary Ryan', label: 'FAMILY (GRAND FATHER)', color: FAMILY},
+        {from: 'Kevin Rian', to: 'Marky', label: 'STUDENT', color: STUDENT},
+        {from: 'Marky', to: 'Kevin Rian Partner', label: 'FAMILY (SON)', color: FAMILY},
+        {from: 'Kevin Rian', to: 'Terry Bogard', label: 'OLD ENEMY'},
+        {from: 'Bonne Jennet', to: 'Kain R. Heinlein', label: 'STEAL'},
+        {from: 'Mai Shiranui', to: 'Hokutomaru', label: 'FAMILY (AS SISTER)', color: FAMILY},
+        {from: 'Hokutomaru', to: 'Mai Shiranui', label: 'FAMILY (AS BROTHER)', color: FAMILY},
+        {from: 'Grant', to: 'Kain R. Heinlein', label: "FRIENDS", color: FRIENDS},
+        {from: 'Grant', to: 'Marie Heinlein', label: "FRIENDS", color: FRIENDS}
